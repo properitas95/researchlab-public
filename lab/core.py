@@ -23,7 +23,7 @@ def strip_env(cmd):
     return cmd[i:]
 
 
-PY_RE = re.compile(r"(?:[\w./-]+/)?python(?:3(?:\.\d+)?)?\b")  # a python interpreter named in a brief or command
+PY_RE = re.compile(r"(?:[\w./@+~-]+/)?python(?:3(?:\.\d+)?)?\b")  # paths may hold @ (homebrew python@3.x), + or ~  # a python interpreter named in a brief or command
 
 
 def win_py(py):

@@ -63,6 +63,8 @@ def freeze_spec(d) -> dict | str:
             if len(set(py)) > 1:
                 return 'ambiguous Python interpreter in brief'
             cmd = [py[0] if py else 'python3' if os.name == 'nt' else sys.executable, evaluator, '--split', 'dev']
+        elif len(set(py)) == 1:
+            cmd = [py[0], *cmd[1:]]  # same interpreter the critic ran (critic._command substitutes the brief's)
         if (len(cmd) < 4 or not re.fullmatch(r'python(?:3(?:\.\d+)?)?', Path(cmd[0]).name)
                 or (exp / cmd[1]).resolve() != (exp / evaluator).resolve()
                 or cmd.count('--split') != 1 or cmd[cmd.index('--split') + 1] != 'dev'

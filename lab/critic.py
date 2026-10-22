@@ -124,8 +124,8 @@ def freeze_gate(d, tagged=False):  # tagged: blockers are checked by validity() 
 def _command(d, brief):
     py = core.PY_RE.search(brief)
     python = py[0] if py else 'python3' if os.name == 'nt' else sys.executable
-    reply = d / 'plan_reply.md'
-    lines = re.findall(r'^EVAL:\s*(.+)$', reply.read_text() if reply.exists() else '', re.M)
+    replies = [d / n for n in ('replan_reply.md', 'plan_reply.md') if (d / n).exists()]  # latest design first, as autofreeze reads it
+    lines = next((x for x in (re.findall(r'^EVAL:\s*(.+)$', r.read_text(), re.M) for r in replies) if x), [])
     cmd = core.strip_env(shlex.split(lines[-1].strip().strip('`'))) if lines else [python, 'evaluate.py', '--split', 'dev']
     if py and cmd:
         cmd[0] = python
