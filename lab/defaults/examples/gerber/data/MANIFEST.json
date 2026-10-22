@@ -1,0 +1,31 @@
+{
+ "name": "kr_a200_dev",
+ "source_url": "bundled with the package (local snapshot)",
+ "license": "bundled for the ResearchLab demo; no redistribution outside the package",
+ "retrieved_utc": "2026-10-22T00:00:00Z",
+ "files": [
+  {
+   "path": "returns.tsv.gz",
+   "sha256": "88ec6960ee177aa55b8754a4f9a34dc58b6fe1e3c0c292ae996fad57c4f6d718",
+   "bytes": 1955758
+  },
+  {
+   "path": "universe.json",
+   "sha256": "09603f80cacc50998c8da46697ff3934b277eec45a3a27fd4921d1586aee871f",
+   "bytes": 104063
+  }
+ ],
+ "as_of": "2020-12-30",
+ "dev_end": "2020-12-30",
+ "notes": "KOSPI200 constituents, daily log total returns, point-in-time top-200 universes; dev snapshot cut 2020-12-31; built from a local market-data warehouse. returns.tsv.gz: tab-separated, header date+codes, empty = NaN; universe.json: {date: [codes]} valid from that date until the next key. 2021 and later is absent on purpose (dev snapshot).",
+ "returns_shape": [
+  1474,
+  351
+ ],
+ "dates": [
+  "2015-01-05",
+  "2020-12-30"
+ ],
+ "universe_dates": 59,
+ "topn": 200
+}

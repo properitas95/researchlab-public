@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "researchlab"
+version = "0.1.0"
+description = "Research harness: one question from brief to reviewed result"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+researchlab = "lab.cli:main"
+
+[tool.setuptools]
+packages = ["lab"]
+
+[tool.setuptools.package-data]
+lab = ["defaults/**/*"]

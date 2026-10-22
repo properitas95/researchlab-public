@@ -1,0 +1,7 @@
+validate-data
+Source: https://github.com/anthropics/knowledge-work-plugins (data/skills/validate-data/SKILL.md @ 33d3dea41a341b341d4f5da2e8801ae0c89be2b8)
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Modifications from upstream:
+- Removed the blockquote that pointed to ../../CONNECTORS.md (a file that is not shipped with this skill, and a connector-setup step this lab does not provide).
+No other changes.

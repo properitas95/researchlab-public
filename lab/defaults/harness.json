@@ -1,0 +1,66 @@
+{
+ "version": 1,
+ "clean": true,
+ "codex_model": "gpt-6-astra",
+ "codex_effort": "medium",
+ "roles": {
+  "data_engineer": {
+   "provider": "codex",
+   "model": null,
+   "prompt": "prompts/roles/data_engineer.md",
+   "memory": [
+    "role",
+    "global"
+   ],
+   "write": true,
+   "network": true
+  },
+  "researcher": {
+   "provider": "codex",
+   "model": null,
+   "prompt": "prompts/roles/researcher.md",
+   "memory": [
+    "role",
+    "global"
+   ],
+   "write": true,
+   "network": false
+  },
+  "reviewer": {
+   "provider": "claude",
+   "model": "haiku",
+   "prompt": "prompts/roles/reviewer.md",
+   "memory": [
+    "role"
+   ],
+   "write": false,
+   "network": false
+  }
+ },
+ "stages": {
+  "survey": "researcher",
+  "ideate": "researcher",
+  "novelty": "researcher",
+  "plan": "researcher",
+  "replan": "researcher",
+  "explore": "researcher",
+  "experiment": "researcher",
+  "ablate": "researcher",
+  "posthoc": "researcher",
+  "hypotheses": "researcher",
+  "discriminate": "researcher",
+  "write": "researcher",
+  "paper": "researcher",
+  "revise": "researcher",
+  "program": "researcher",
+  "digest": "researcher",
+  "screen": "reviewer",
+  "critic": "reviewer",
+  "review": "reviewer",
+  "panel": "reviewer",
+  "snapshot": "data_engineer",
+  "fetch-data": "data_engineer",
+  "venue": "reviewer"
+ },
+ "memory_lines": 40
+}
